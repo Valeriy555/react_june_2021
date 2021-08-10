@@ -1,6 +1,6 @@
 import './homework.css';
 
-export function Simpsons({sName, pSurname, vAge, sInfo, fPhoto}) {
+export function Simpsons({sName, pSurname, vAge, sInfo, fPhoto}){
 
 
     return (
