@@ -14,7 +14,6 @@ export default function Users({item: userItem}) {
     }, [userItem.id]);
 
 
-
     return (
         <div>
             <h2>{userItem.id} {userItem.name}</h2>

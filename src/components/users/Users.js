@@ -1,7 +1,6 @@
 import User from '../user/User';
 import {useEffect, useState} from "react";
-// import {getUser, getUsers} from "../../services/user.service"; // вариант через fetch
-import {getAxiosUsers} from "../../services/users.axios.servis";// вариант через axios
+import {getAxiosUsers} from "../../services/users.axios.servis";
 
 export default function Users () {
 
@@ -10,9 +9,8 @@ export default function Users () {
 
    useEffect(()=> {
 
-     // getUsers().then(value => setUsers([...value])); // вариант через fetch
 
-       getAxiosUsers().then(({data}) => setUsers([...data])); // вариант через axios
+       getAxiosUsers().then(({data}) => setUsers([...data]));
 
 
 
