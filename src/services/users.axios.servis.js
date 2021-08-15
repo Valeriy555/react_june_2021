@@ -8,13 +8,9 @@ let confing = {
 
 let axiosInstance = axios.create(confing);
 
-const getAxiosUsers = () => { return axiosInstance.get('');};
+const getAxiosUsers = () => {
+    return axiosInstance.get('');
+};
 
 
-const getPostsOfUser = (id)=>{
-    return axiosInstance('/'+id +'/posts');
-
-}
-
-
-export {getAxiosUsers, getPostsOfUser};
+export {getAxiosUsers};

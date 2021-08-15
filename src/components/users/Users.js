@@ -1,3 +1,4 @@
+import "./Users.css"
 import User from '../user/User';
 import {useEffect, useState} from "react";
 import {getAxiosUsers} from "../../services/users.axios.servis";
@@ -5,7 +6,6 @@ import {getAxiosUsers} from "../../services/users.axios.servis";
 export default function Users () {
 
     let [users,setUsers]= useState([]);
-
 
    useEffect(()=> {
 
@@ -17,7 +17,7 @@ export default function Users () {
    }, [])
 
     return(
-        <div>
+        <div className="userDiv">
             {
                 users.map((userItem , index) => <User key={userItem.id} item={userItem}/> )
             }

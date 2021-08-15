@@ -1,9 +1,12 @@
-export default function Address ({address: {street,suite,city}})
+import Geo from "../geo/Geo";
 
-{
-    return(
+
+export default function Address({address: {street, suite, city, zipcode, geo}}) {
+    return (
         <div>
-            <em> <b> City: {city}, Street: {street}, Suite:{suite} </b> </em>
+            <b>Address: </b>
+            <br/>  City: {city}, Street: {street}, Suite:{suite},Zipcode:{zipcode};
+            <p><Geo location={geo}/></p>
         </div>
     );
 }

@@ -1,15 +1,26 @@
+import "./Posts.css"
 import Post from "../post/Post";
+import {useEffect, useState} from "react";
+import {getPostsOfUser} from "../../services/post.service";
 
-export default function Posts({items}) {
-    return (
-        <div>
+
+export default function Posts () {
+
+    let [posts,setPosts]= useState([]);
+
+    useEffect(()=> {
+
+
+        getPostsOfUser().then(({data}) => setPosts([...data]));
+
+
+
+    }, [])
+
+    return(
+        <div className="postDiv">
             {
-                items.map(value => (<Post
-                            item={value}
-                            key={value.id}
-                        />
-                    )
-                )
+                posts.map((postValue,index) => <Post key={postValue.id} value={postValue} />)
             }
         </div>
     );
