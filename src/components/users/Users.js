@@ -7,7 +7,7 @@ export default function Users() {
 
     let [users, setUsers] = useState([]);
     let [user, setUser] = useState({});
-    let [posts,setPosts] =useState({});
+    let [post,setPost] =useState({});
 
 
     useEffect(() => {
@@ -18,8 +18,8 @@ export default function Users() {
 const choseUser = (u) => {
 setUser({...u});
 
+    getPostsOfUser(u.id).then(value => setPost({...value}));
 
- getPostsOfUser(u.id).then(value => setPosts([...value]));
 }
 
 
@@ -30,12 +30,15 @@ setUser({...u});
                     users.map(value =>
                         <User key={value.id} item={value} choseUser={choseUser}/>)
                 }
-                {
 
-                }
             </div>
 
-            <div className={"chosen-one"}>{JSON.stringify(user,post)}
+            <div className={"chosen-one"}>{JSON.stringify(user)}
+                <div className={'postUser'}>{JSON.stringify(post)}
+
+
+                </div>
+
             </div>
         </div>
     );
