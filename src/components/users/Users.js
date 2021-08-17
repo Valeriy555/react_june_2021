@@ -7,7 +7,7 @@ export default function Users() {
 
     let [users, setUsers] = useState([]);
     let [user, setUser] = useState(null);
-    let [post,setPost] =useState({});
+    let [post,setPost] =useState([]);
 
 
     useEffect(() => {
@@ -33,7 +33,8 @@ setUser({...u});
 
             </div>
 
-            {user && <div className={"chosen-one"}>{JSON.stringify(post)}
+            {user && <div className={"chosen-one"}>
+                {JSON.stringify(post)}
 
 
             </div>}

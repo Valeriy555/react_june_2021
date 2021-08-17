@@ -1,8 +1,8 @@
 export default function  User({item, choseUser})
+
 {
     const onClickUserChose = ()=>{
         choseUser(item);
-
     }
 
 
