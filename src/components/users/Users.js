@@ -35,8 +35,6 @@ setUser({...u});
 
             {user && <div className={"chosen-one"}>
                 {JSON.stringify(post)}
-
-
             </div>}
 
 
