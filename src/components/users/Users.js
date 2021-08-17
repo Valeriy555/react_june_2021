@@ -21,8 +21,6 @@ setUser({...u});
     getPostsOfUser(u.id).then(value => setPost([...value]));
 
 }
-
-
     return (
         <div className={'wrap'}>
             <div className={'users-box'}>
