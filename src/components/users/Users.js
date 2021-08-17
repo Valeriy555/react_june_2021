@@ -6,8 +6,8 @@ import User from "../user/User";
 export default function Users() {
 
     let [users, setUsers] = useState([]);
-    let [user, setUser] = useState({});
-    let [post,setPost] =useState({});
+    let [user, setUser] = useState(null);
+    let [post,setPost] =useState(null);
 
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export default function Users() {
 const choseUser = (u) => {
 setUser({...u});
 
-    getPostsOfUser(u.id).then(value => setPost({...value}));
+    getPostsOfUser(u.id).then(value => setPost([...value]));
 
 }
 
@@ -33,13 +33,12 @@ setUser({...u});
 
             </div>
 
-            <div className={"chosen-one"}>{JSON.stringify(user)}
-                <div className={'postUser'}>{JSON.stringify(post)}
+            {user && <div className={"chosen-one"}>{JSON.stringify(user)}
+                <div className={'postUser'}>{post.title}</div>
+
+            </div>}
 
 
-                </div>
-
-            </div>
         </div>
     );
 }
