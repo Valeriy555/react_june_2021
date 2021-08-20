@@ -2,7 +2,7 @@
 
 import {saveCar} from "../../service/service.api.car";
 
-export default function Cars () {
+export default function Car () {
 
 
 
@@ -10,9 +10,9 @@ export default function Cars () {
         e.preventDefault();
 
         // сбор данных с form
-        let carsToSave ={model:e.target.model.value, price:e.target.price.value,year:e.target.year.value}
+        let carToSave ={model:e.target.model.value, price:e.target.price.value,year:e.target.year.value}
 
-        saveCar(carsToSave);
+        saveCar(carToSave);
 
     };
 
