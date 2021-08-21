@@ -2,7 +2,7 @@
 
 import {saveCar} from "../../service/service.api.car";
 
-export default function Car () {
+export default function Car ({item:{model,price,year}}) {
 
 
 
@@ -19,10 +19,12 @@ export default function Car () {
     return (
         <div>
             <form onSubmit={onCarsSubmit} >
-                <input type="text" name={'model'} placeholder='model'/>
+                <input type="text" name={'model'} placeholder={'model'}/>
                 <input type="text" name={'price'} placeholder={'price'}/>
                 <input type="text" name={'year'} placeholder={'year'}/>
                 <button>Save new car</button>
+
+                {model}-{price}-{year}
 
             </form>
         </div>

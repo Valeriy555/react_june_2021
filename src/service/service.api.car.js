@@ -10,5 +10,18 @@ const saveCar = (car) => {
         .then((json) => console.log(json));
 
 }
+const saveCars = (cars) => {
+    fetch('http://195.72.144.67/api/v1/cars',{
+        method:'GET',
+        body: JSON.stringify(cars),
+        headers:{
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
 
-export {saveCar};
+}
+
+
+export {saveCar,saveCars};
