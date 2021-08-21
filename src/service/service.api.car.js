@@ -1,5 +1,5 @@
 const saveCar = (car) => {
-    fetch('http://195.72.144.67/api/v1/cars',{
+    fetch('http://91.201.233.14/api/v1/cars',{
         method:'POST',
         body: JSON.stringify(car),
         headers:{
@@ -11,7 +11,7 @@ const saveCar = (car) => {
 
 }
 const saveCars = (cars) => {
-    fetch('http://195.72.144.67/api/v1/cars',{
+    return fetch('http://91.201.233.14/api/v1/cars',{
         method:'GET',
         body: JSON.stringify(cars),
         headers:{
@@ -19,7 +19,7 @@ const saveCars = (cars) => {
         },
     })
         .then((response) => response.json())
-        .then((json) => console.log(json));
+    // .then((json) => console.log(json));
 
 }
 

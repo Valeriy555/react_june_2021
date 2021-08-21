@@ -1,0 +1,15 @@
+.cars-box {
+    width: 527px;
+    margin-top: 5px;
+    border: 2px solid brown;
+    background: silver;
+
+}
+
+.list {
+    border-bottom: 2px solid brown;
+    font-size: 20px;
+    text-align: center;
+    color: brown;
+    font-weight: bold;
+}

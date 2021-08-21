@@ -1,10 +1,13 @@
-import Car from "./components/car/Car";
-import SuperCar from "./components/SuperCars/SuperCars";
+import FormCar from "./components/form/FormCar";
+// import SuperCar from "./components/SuperCars/SuperCars";
+import Cars from "./components/cars/Cars";
 
 export default function App () {
     return (
         <div>
-            <Car/>
+            <FormCar/>
+
+           < Cars/>
 
             {/*<SuperCar/>*/}
         </div>
