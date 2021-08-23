@@ -19,9 +19,15 @@ const saveCars = (cars) => {
         },
     })
         .then((response) => response.json())
-    // .then((json) => console.log(json));
+}
+
+const deleteCarApi = (cars) => {
+    return fetch('http://91.201.233.14/api/v1/cars', {
+        method: 'DELETE',
+    });
 
 }
 
 
-export {saveCar,saveCars};
+
+export {saveCar,saveCars,deleteCarApi};
