@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 
 import Home from "./components/Home";
+import About from "./components/About";
 
 export default function App() {
     return (
@@ -24,9 +25,11 @@ export default function App() {
             </div>
         <hr/>
             <div>
-                <Route path={'/home'}>
-             <Home/>
+                <Route path={'/home'}>  // первый вариант
+                    <Home/>
                 </Route>
+
+            <Route path={'/about'} component={About}/>
 
             </div>
         </Router>
