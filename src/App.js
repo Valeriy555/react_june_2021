@@ -1,9 +1,8 @@
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
+        Route,
     Link,
-    withRouter,
+
 } from "react-router-dom"
 
 import Users from "./components/users/Users";
@@ -30,15 +29,15 @@ export default function App() {
             <div>
 
                 <Route path={'/users'} render={(props) => {
-                    console.log(props);
+
                     return <Users/>}}/>
 
                 <Route path={'/posts'} render={(props) => {
-                    console.log(props);
+
                     return <Posts/>}}/>
 
                 <Route path={'/comments'} render={(props) => {
-                    console.log(props);
+
                     return <Comments/>}}/>
 
             </div>
