@@ -1,4 +1,4 @@
-import Geo from "../geo/Geo";
+import Geo from "./Geo";
 
 
 export default function Address({address: {street, suite, city, zipcode, geo}}) {
@@ -6,7 +6,7 @@ export default function Address({address: {street, suite, city, zipcode, geo}}) 
         <div>
             <b>Address: </b>
             <br/>  City: {city}, Street: {street}, Suite:{suite},Zipcode:{zipcode};
-            <p><Geo location={geo}/></p>
+            <Geo location={geo}/>
         </div>
     );
 }

@@ -1,13 +1,11 @@
-import Address from "../address/Address";
-import Company from "../company/Company";
+import Address from "./Address";
+import Company from "./Company";
 
 
-export default function Users({item: userItem}) {
+export default function User({item: userItem}) {
 
     let {address} = userItem;
     let {company} = userItem;
-
-
 
 
     return (

@@ -30,7 +30,7 @@ export default function App() {
             <div>
 
                 <Route path={'/users'} render={(props) => {
-                    console.log(props);
+
                     return <Users/>}}/>
 
                 <Route path={'/posts'} render={(props) => {
