@@ -10,21 +10,17 @@ const saveCar = (car) => {
         .then((json) => console.log(json));
 
 }
-const saveCars = (cars) => {
-    return fetch('http://91.201.233.14/api/v1/cars',{
-        method:'GET',
-        body: JSON.stringify(cars),
-        headers:{
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-        .then((response) => response.json())
+const saveCars = () => {
+    return fetch('http://91.201.233.14/api/v1/cars')
+
+        .then(value => value.json())
 }
 
-const deleteCarApi = () => {
-    return fetch('http://91.201.233.14/api/v1/cars', {
+const deleteCarApi = (id) => {
+    return fetch('http://91.201.233.14/api/v1/cars/' +id, {
         method: 'DELETE',
-    });
+    })
+
 }
 
 export {saveCar,saveCars,deleteCarApi};

@@ -12,7 +12,6 @@ export default function Cars() {
             setCars([...value])
         });
 
-
     }, [cars]);
 
     let deleteCar = (id) => {
