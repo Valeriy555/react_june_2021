@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import {useEffect, useState} from "react";
 import User from "./User";
-import {getUsers} from "../services/user.appi";
+import {getUsers} from "../../services/user.appi";
 import UserDetails from "./UserDetails";
 
 export default function Users(props) {
@@ -16,11 +16,14 @@ export default function Users(props) {
         }
         fetchData();
     }, []);
+    console.log(props)
     return (
         <div>
             {
                 users.map(value => <User history = {history} item={value} key={value.id}/>)
             }
+
+
             <Route path={`${url}/:id`} render={(props)=>{
                 return <UserDetails {...props}/>
             }}/>
