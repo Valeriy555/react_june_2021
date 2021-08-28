@@ -1,16 +1,22 @@
 import {useEffect, useState} from "react";
 import {getPost} from "../../services/post.api";
-export default function PostDetails({history, match: {params:{id}}}) {
 
-    let [post, setPost] = useState( {});
+export default function PostDetails(props) {
+    let {location: {state}} = props;
 
-    useEffect( ()=>{
-        getPost(id).then(value => setPost( {value}));
-    }, [id]);
+
+
+
     return (
         <div>
-            {JSON.stringify(post)}
+            {/*{JSON.stringify(state)}*/}
 
+           <hr/>
+               <b> userId:</b> {state.userId};
+               <b> id:</b>{state.id};
+               <b> title:</b> {state.title};
+               <b> body:</b> {state.body}.
+            <hr/>
 
         </div>
     );

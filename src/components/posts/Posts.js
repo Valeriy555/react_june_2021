@@ -1,5 +1,4 @@
 import {
-
     Route,
 } from "react-router-dom";
 import {useEffect, useState} from "react";
@@ -7,8 +6,8 @@ import {getPosts} from "../../services/post.api";
 import Post from "../posts/Post";
 import PostDetails from "../posts/PostDetails";
 
-export default function Users(props) {
-    let {match: {url}, history} = props;
+export default function Posts(props) {
+    let {match: {url}} = props;
     let [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -23,13 +22,11 @@ export default function Users(props) {
     return (
         <div>
             {
-                posts.map(value => <Post history={history} item={value} key={value.id}/>)
+                posts.map(value => <Post  item={value} key={value.id}/>)
             }
 
 
-            <Route path={`${url}/:id`} render={(props) => {
-                return <PostDetails {...props}/>
-            }}/>
+            <Route path={`${url}/:id`} component={PostDetails}/>
         </div>
     );
 }

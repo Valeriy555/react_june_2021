@@ -1,5 +1,5 @@
 export default function User({item, history}) {
-    let  navigate = ()=>{
+    const  navigate = ()=>{
         history.push('/users/'+item.id, item);
     }
     return (

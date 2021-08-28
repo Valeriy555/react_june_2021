@@ -16,7 +16,7 @@ export default function Users(props) {
         }
         fetchData();
     }, []);
-    console.log(props)
+
     return (
         <div>
             {
