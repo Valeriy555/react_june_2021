@@ -1,20 +1,26 @@
+import "./Users.css"
+import User from '../user/User';
 import {useEffect, useState} from "react";
-import {discoverMovie} from "../../services/movieService";
+import {getAxiosUsers} from "../../services/users.axios.servis";
 
-export default function Movies() {
+export default function Users () {
 
-    let [movies, setMovies] = useState([]);
+    let [movies,setMovies]= useState([]);
 
-    useEffect(() => {
-        discoverMovie().then(({data}) => setMovies([...data]));
+    useEffect(()=> {
+
+
+        getAxiosUsers().then(({data}) => setMovies([...data]));
+
+
+
     }, [])
-}
 
-return (
-    {
-        movies.map((movieItem,) =>
-            <Movie key={movieItem.id} item = {movieItem}/>)
+    return(
+        <div className="userDiv">
+            {
+                movies.map((userItem , index) => <Movie key={userItem.id} item={userItem}/> )
+            }
+        </div>
+    );
 }
-
-</div>
-)
