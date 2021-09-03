@@ -1,6 +1,6 @@
 import './App.css'
 import {useEffect} from "react";
-import {discoverMovie} from "./service/movieService";
+import {discoverMovie} from "./services/movieService";
 
 function App() {
     useEffect(()=> {
