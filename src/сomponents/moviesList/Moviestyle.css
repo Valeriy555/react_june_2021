@@ -1,7 +1,14 @@
 .movie-card{
     display: flex;
     flex-wrap: wrap;
+    padding-left: 50px;
 }
-.movie-card div{
+ .movie-card div{
+    /*width: 18%;*/
+    /*background: silver;*/
+    margin: 5px;
 
 }
+ img{
+     width: 230px;
+ }
