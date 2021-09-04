@@ -1,25 +1,34 @@
-import "./Users.css"
-import User from '../user/User';
 import {useEffect, useState} from "react";
-import {getAxiosUsers} from "../../services/users.axios.servis";
 
-export default function Movies () {
+// import MoviesListCard from "./MoviesListCard";
+import {discoverMovie} from "../../services/movieService";
 
-    let [movies,setMovies]= useState([]);
+export default function MoviesList() {
 
-    useEffect(()=> {
+    let [moviesList, setMoviesList] = useState([]);
+
+    useEffect(() => {
 
 
-        getAxiosUsers().then(({data}) => setMovies([...data]));
-
+        discoverMovie().then(value => setMoviesList(value.data.results));
 
 
     }, [])
-
-    return(
-        <div className="userDiv">
+    console.log(moviesList)
+    return (
+        <div>
             {
-                movies.map(( movieItem , index) => <Movie key={ movieItem.id} item={ movieItem}/> )
+                moviesList.map(results => <div key={results.id}>
+                    <p> id: {results.id}</p>
+                    <p>Name: {results.title}</p>
+                    <p>Popularity: {results.popularity}</p>
+                    <p>Overview: {results.overview}</p>
+                    <p>Release date: {results.release_date}</p>
+                    <p>Original language: {results.original_language}</p>
+
+                        <img src={`https://image.tmdb.org/t/p/w200${results.poster_path}`} alt={`${results.original_title}`}/>
+<hr/>
+                </div>)
             }
         </div>
     );
