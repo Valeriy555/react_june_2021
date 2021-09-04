@@ -1,0 +1,7 @@
+.movie-card{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie-card div{
+
+}

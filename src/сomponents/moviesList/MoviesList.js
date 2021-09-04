@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
-
-// import MoviesListCard from "./MoviesListCard";
 import {discoverMovie} from "../../services/movieService";
+import MovieDetails from "./MovieDetails";
 
 export default function MoviesList() {
 
@@ -18,17 +17,9 @@ export default function MoviesList() {
     return (
         <div>
             {
-                moviesList.map(results => <div key={results.id}>
-                    <p> id: {results.id}</p>
-                    <p>Name: {results.title}</p>
-                    <p>Popularity: {results.popularity}</p>
-                    <p>Overview: {results.overview}</p>
-                    <p>Release date: {results.release_date}</p>
-                    <p>Original language: {results.original_language}</p>
+                moviesList.map((results,index) => <MovieDetails key={results.id} results={results}/>)
 
-                        <img src={`https://image.tmdb.org/t/p/w200${results.poster_path}`} alt={`${results.original_title}`}/>
-<hr/>
-                </div>)
+
             }
         </div>
     );
