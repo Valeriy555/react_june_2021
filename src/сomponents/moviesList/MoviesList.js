@@ -1,8 +1,12 @@
 import {useEffect, useState} from "react";
-import {discoverMovie,discoverGenre} from "../../services/movieService";
-import MovieDetails from "./MovieDetails";
+import {discoverMovie} from "../../services/movieService";
+import MovieCard from "./MovieCard";
 import './Moviestyle.css'
-export default function MoviesList() {
+import {Route} from "react-router-dom";
+import MovieDetails from "./MovieDetails";
+export default function MoviesList(props) {
+
+    let {match:{url}} = props;
 
     let [moviesList, setMoviesList] = useState([]);
 
@@ -14,9 +18,11 @@ export default function MoviesList() {
     return (
         <div className='movie-card'>
             {
-                moviesList.map((results,index) => <MovieDetails key={results.id} results={results}/>)
+                moviesList.map((results,index) => <MovieCard key={results.id} results={results}/>)
 
             }
+
+            <Route path={`${url}/:id`} component={MovieDetails}/>
         </div>
     );
 }

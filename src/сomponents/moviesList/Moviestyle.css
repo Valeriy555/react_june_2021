@@ -1,14 +1,20 @@
-.movie-card{
+.movie-card {
     display: flex;
     flex-wrap: wrap;
     padding-left: 50px;
+    background: coral;
 }
- .movie-card div{
-    /*width: 18%;*/
-    /*background: silver;*/
+
+.movie-card div {
     margin: 5px;
+    border: 2px solid brown;
+    background: silver;
+    text-align: center;
 
 }
- img{
-     width: 230px;
- }
+
+img {
+    width: 230px;
+    height: 340px;
+    border-bottom: 3px solid darkred;
+}
