@@ -1,32 +1,29 @@
 import './App.css'
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link,
-    withRouter
 
 } from "react-router-dom";
 
 import MoviesList from "./сomponents/moviesList/MoviesList";
 import GenreBadge from "./сomponents/genre/GenreBadge";
-
+import MovieDetails from "./сomponents/moviesList/MovieDetails";
 
 function App() {
 
     return (
-
         <Router>
             <div>
 
                 <Link to={'/moviesList'}>getMovies </Link> <br/>
-                <Link to={'/genreList'}>getGenres  </Link>
+                {/*<Link to={'/genreList'}>getGenres  </Link>*/}
 
 
             </div>
 
-            <Route path={'/moviesList'} component={MoviesList}/>
-            <Route path={'/genreList'} component={GenreBadge}/>
+            <Route  path={'/moviesList'} component={MoviesList}/>
+
 
         </Router>
     );

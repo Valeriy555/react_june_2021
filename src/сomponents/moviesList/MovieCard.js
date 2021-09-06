@@ -8,7 +8,7 @@ export default function MovieCard({results}) {
 
     return (
         <div>
-            <p> {results.id}</p>
+            {/*<p> {results.id}</p>*/}
             {/*<p> {results.title}</p>*/}
             {/*<p>Popularity: {results.popularity}</p>*/}
             {/*<p>Overview: {results.overview}</p>*/}
@@ -18,7 +18,10 @@ export default function MovieCard({results}) {
 
             <img src={`https://image.tmdb.org/t/p/w200${results.poster_path}`} alt={`${results.original_title}`}/>
             <br/>
-            <Link to={{pathname: '/movie/'+results.id,state:results}}>more about the film</Link>
+            <Link to={{pathname:`/moviesList${results.id}`,state:results}}>more about the film</Link>
+            {/*<a href="../MoviesListCard.js"target="_blank"> <img src= {`https://image.tmdb.org/t/p/w200${results.poster_path}`}*/}
+            {/*                                                    alt={`${results.original_title}`}/></a>*/}
+
         </div>
     );
 }

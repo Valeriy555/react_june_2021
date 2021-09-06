@@ -5,9 +5,9 @@ import './Moviestyle.css'
 import {Route} from "react-router-dom";
 import MovieDetails from "./MovieDetails";
 export default function MoviesList(props) {
-
+//     export default function MoviesList(){
     let {match:{url}} = props;
-
+console.log(url);
     let [moviesList, setMoviesList] = useState([]);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function MoviesList(props) {
 
             }
 
-            <Route path={`${url}/:id`} component={MovieDetails}/>
+            <Route path={`${url}:id`} component={MovieDetails}/>
         </div>
     );
 }
