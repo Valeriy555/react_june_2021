@@ -16,8 +16,8 @@ export default function App() {
             <div>
 
                 <Link to={'/moviesList'}>getMovies </Link> <br/>
-                <Link to={'/genreList'}>getMovies </Link> <br/>
-                <Link to={'/moviesListCard'}>getMovies </Link> <br/>
+                <Link to={'/genreList'}>getGenre </Link> <br/>
+                <Link to={'/moviesListCard'}>getMovieListCard </Link> <br/>
 
 <hr/>
 

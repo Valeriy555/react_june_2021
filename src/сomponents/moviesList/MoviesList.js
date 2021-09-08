@@ -1,24 +1,28 @@
 import {useEffect, useState} from "react";
-import {discoverMovie} from "../../services/movieService";
-import MoviesListCard from "./MoviesListCard";
-// import './Moviestyle.css'
-export default function MoviesList() {
+import {discoverMovie} from "../services/movieService";
 
-    let [moviesList, setMoviesList] = useState([]);
+
+export default function MoviesList({props,results}) {
+
+    let [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        discoverMovie().then(value => setMoviesList(value.data.results));
+        discoverMovie().then(value => setMovies(value.data.results));
 
     }, [])
-    console.log(moviesList)
+    console.log(movies)
     return (
         <div className='movie-card'>
             {
-                moviesList.map((results,index) => <MoviesListCard key={results.id} results={results}/>)
+                // movies.map((results,index) => <MoviesListCard key={results.id} results={results}/>)
+                movies.map(results=> <div key={results.id} >
+                    title:{results.title}<br/>
+                    generes:{results.genre_ids.name}
+                </div>)
 
             }
 
-            {/*<Route path={`${url}:id`} component={MovieDetails}/>*/}
+            {/*<Route path={`${url}:id`} component={Movies}/>*/}
         </div>
     );
 }
