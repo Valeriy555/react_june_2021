@@ -1,4 +1,4 @@
-import './App.css'
+// import './App.css'
 import {
     BrowserRouter as Router,
     Route,
@@ -7,26 +7,28 @@ import {
 } from "react-router-dom";
 
 import MoviesList from "./сomponents/moviesList/MoviesList";
-import GenreBadge from "./сomponents/genre/GenreBadge";
-import MovieDetails from "./сomponents/moviesList/MovieDetails";
+import MoviesListCard from "./сomponents/moviesList/MoviesListCard";
 
-function App() {
+export default function App() {
 
     return (
         <Router>
             <div>
 
                 <Link to={'/moviesList'}>getMovies </Link> <br/>
-                {/*<Link to={'/genreList'}>getGenres  </Link>*/}
+                <Link to={'/genreList'}>getMovies </Link> <br/>
+                <Link to={'/moviesListCard'}>getMovies </Link> <br/>
 
+<hr/>
 
             </div>
 
             <Route  path={'/moviesList'} component={MoviesList}/>
+            {/*<Route  path={'/genreList'} component={GenreList}/>*/}
+            <Route  path={'/moviesListCard'} component={MoviesListCard}/>
 
 
         </Router>
     );
 }
 
-export default App;

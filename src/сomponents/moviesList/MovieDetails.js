@@ -14,12 +14,14 @@
 //     );
 // }
 
+//
+// export default function MovieDetails(props) {
+// console.log(props);
+//     return (
+//         <div>
+//           Тут должна быть инфа о фильме !!!!!
+//         </div>
+//     );
+// }
 
-export default function MovieDetails(props) {
-console.log(props);
-    return (
-        <div>
-          Тут должна быть инфа о фильме !!!!!
-        </div>
-    );
-}
+
