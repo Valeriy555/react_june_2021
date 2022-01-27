@@ -19,13 +19,13 @@ const reducer = (state= {h:0, a:0, b:0, c:0},action) =>{
 
 
     // switch (action) {
-    //     case '+':
+    //      case '+':
     //         return state +10;
     //     case '-':
     //         return state -2;
-    //     default:
+    //      default:
     //         return state
-    // }
+    //  }
 }
 
 export default reducer;
