@@ -1,34 +1,29 @@
-// import './App.css'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link,
+import './App.css';
+import {Navigate, Route, Routes} from "react-router";
+import MainLayout from "./layouts/MainLayout";
 
-} from "react-router-dom";
+import {useSelector} from "react-redux";
+import MoviesPage from "./pages/MoviesPage";
+import {Details} from "./сomponents";
 
-import MoviesList from "./сomponents/moviesList/MoviesList";
-import MoviesListCard from "./сomponents/moviesList/MoviesListCard";
 
-export default function App() {
 
+function App() {
+    const {background, color} = useSelector(state => state.themeReducer)
     return (
-        <Router>
-            <div>
-
-                <Link to={'/moviesList'}>getMovies </Link> <br/>
-                <Link to={'/genreList'}>getGenre </Link> <br/>
-                <Link to={'/moviesListCard'}>getMovieListCard </Link> <br/>
-
-<hr/>
-
+        <div className="App">
+            <div className="page" style={{color:color,background:background}}>
+                <Routes>
+                    <Route  path={'/'} element={<MainLayout/>}>
+                        <Route index element={<Navigate to={'/movies'}/>}/>
+                        <Route path={'/movies'} element={<MoviesPage/>}/>
+                        <Route path={'/movies/details'} element={<Details/>}/>
+                    </Route>
+                </Routes>
             </div>
-
-            <Route  path={'/moviesList'} component={MoviesList}/>
-            {/*<Route  path={'/genreList'} component={GenreList}/>*/}
-            <Route  path={'/moviesListCard'} component={MoviesListCard}/>
-
-
-        </Router>
+        </div>
     );
 }
+
+export default App;
 
