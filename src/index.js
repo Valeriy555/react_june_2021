@@ -1,9 +1,10 @@
 import React, {createContext} from 'react';
-import ReactDOM from 'react-dom';
+
 import App from './App';
 import {Provider} from "react-redux";
 import {BrowserRouter} from "react-router-dom";
 import {setUpStore} from "./redux/store/store";
+import ReactDOM from "react-dom/client";
 
 
 const themes = {

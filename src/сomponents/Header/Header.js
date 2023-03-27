@@ -11,7 +11,7 @@ import {moviesActions, themeAction} from "../../redux";
 const Header = () => {
     const [theme, setTheme] = useState(false)
 
-    const {page, movies, filterParam} = useSelector(state => state.moviesReducer)
+    // const {page, movies, filterParam} = useSelector(state => state.moviesReducer)
 
     const {register, handleSubmit, reset} = useForm({defaultValues: {filter: ''}})
     const dispatch = useDispatch()

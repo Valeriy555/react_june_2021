@@ -7,13 +7,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faXmark} from '@fortawesome/free-solid-svg-icons'
 
 import './Genres.scss'
-import {ThemeContext} from "../../index";
+
 
 const Genres = () => {
 
     const [genres, setGenres] = useState([])
     const [collapse, setCollapse] = useState(false)
-    const {genre} = useSelector(state => state.genresReducer)
+    // const {genre} = useSelector(state => state.genresReducer)
 
     const dispatch = useDispatch()
     const {color} = useSelector(state => state.themeReducer)
@@ -44,9 +44,7 @@ const Genres = () => {
                         className="genres__container-btn"
                         onClick={() => {
                             dispatch(genresAction.getGenre(genre))
-                        }}>
-                        {genre.name}
-                    </button>
+                        }}>{genre.name}</button>
                 ))}
                 <div className="genres__container-reset">
                     <button
